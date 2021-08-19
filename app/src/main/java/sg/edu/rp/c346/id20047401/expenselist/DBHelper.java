@@ -94,4 +94,8 @@ public class DBHelper extends SQLiteOpenHelper {
         db.close();
         return result;
     }
+    public void deleteAllExpense(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("delete from "+ TABLE_EXPENSE);
+    }
 }

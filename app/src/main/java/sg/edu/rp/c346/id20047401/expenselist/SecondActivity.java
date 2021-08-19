@@ -1,5 +1,6 @@
 package sg.edu.rp.c346.id20047401.expenselist;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
@@ -8,6 +9,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -86,6 +89,26 @@ public class SecondActivity extends AppCompatActivity {
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.clearSelection) {
+            expenseList.clear();
+            DBHelper dbh = new DBHelper(SecondActivity.this);
+            dbh.deleteAllExpense();
+            caExpense.notifyDataSetChanged();
+            totalCost = 0.0;
+            tvTotalCost.setText("Total Cost: " +  Double.toString(totalCost));
+        }
+        return super.onOptionsItemSelected(item);
+
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
         DBHelper dbh = new DBHelper(this);
@@ -98,4 +121,5 @@ public class SecondActivity extends AppCompatActivity {
         }
         tvTotalCost.setText("Total Cost: " +  Double.toString(totalCost));
     }
+
 }

@@ -2,6 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/resetSelection"
-        android:title="Reset" />
+        android:id="@+id/clearSelection"
+        android:title="Clear All" />
 </menu>
