@@ -16,6 +16,7 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -59,18 +60,22 @@ public class SecondActivity extends AppCompatActivity {
                 myBuilder.setPositiveButton("ADD", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        DBHelper dbh = new DBHelper(SecondActivity.this);
-                        String name = etInputName.getText().toString();
-                        double cost = Double.parseDouble(etInputCost.getText().toString());
-                        dbh.insertExpense(name,cost);
-                        expenseList.clear();
-                        expenseList.addAll(dbh.getAllExpenses());
-                        caExpense.notifyDataSetChanged();
-                        totalCost = 0.0;
-                        for(int i = 0; i < expenseList.size();i++){
-                            totalCost += expenseList.get(i).getCost();
+                        if (!etInputName.getText().toString().isEmpty() && !etInputCost.getText().toString().isEmpty()) {
+                            String name = etInputName.getText().toString();
+                            double cost = Double.parseDouble(etInputCost.getText().toString());
+                            DBHelper dbh = new DBHelper(SecondActivity.this);
+                            dbh.insertExpense(name,cost);
+                            expenseList.clear();
+                            expenseList.addAll(dbh.getAllExpenses());
+                            caExpense.notifyDataSetChanged();
+                            totalCost = 0.0;
+                            for(int i = 0; i < expenseList.size();i++){
+                                totalCost += expenseList.get(i).getCost();
+                            }
+                            setTotalCost(totalCost);
+                        } else {
+                            Toast.makeText(SecondActivity.this, "Empty field not allowed!", Toast.LENGTH_SHORT).show();
                         }
-                        setTotalCost(totalCost);
                     }
                 });
                 AlertDialog myDialog = myBuilder.create();
