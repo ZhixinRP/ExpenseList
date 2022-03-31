@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/C346/Workspace/ExpenseList/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/C346/Workspace/ExpenseList/app/src/main/res/layout/activity_second.xml" value="0.1" />
+        <entry key="..\:/C346/Workspace/ExpenseList/app/src/main/res/layout/activity_third.xml" value="0.1" />
+        <entry key="..\:/C346/Workspace/ExpenseList/app/src/main/res/layout/input.xml" value="0.1" />
+        <entry key="..\:/C346/Workspace/ExpenseList/app/src/main/res/layout/row.xml" value="0.1" />
+        <entry key="..\:/C346/Workspace/ExpenseList/app/src/main/res/menu/menu_main.xml" value="0.1" />
+        <entry key="..\:/Users/Zhi Xin/Downloads/ExpenseList/app/src/main/res/drawable/background_btn.xml" value="0.3365740740740741" />
+        <entry key="..\:/Users/Zhi Xin/Downloads/ExpenseList/app/src/main/res/layout/activity_main.xml" value="0.245018115942029" />
+        <entry key="..\:/Users/Zhi Xin/Downloads/ExpenseList/app/src/main/res/layout/activity_second.xml" value="0.18009259259259258" />
+        <entry key="..\:/Users/Zhi Xin/Downloads/ExpenseList/app/src/main/res/layout/input.xml" value="0.18009259259259258" />
+        <entry key="..\:/Users/Zhi Xin/Downloads/ExpenseList/app/src/main/res/layout/row.xml" value="0.18009259259259258" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

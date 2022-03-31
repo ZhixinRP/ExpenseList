@@ -53,7 +53,7 @@ public class SecondActivity extends AppCompatActivity {
                 final EditText etInputCost = viewDialog.findViewById(R.id.editTextCost);
 
                 myBuilder.setView(viewDialog);
-                myBuilder.setTitle("Add Expense");
+                myBuilder.setTitle("Add an expense");
                 myBuilder.setCancelable(false);
                 myBuilder.setNegativeButton("CANCEL", null);
                 myBuilder.setPositiveButton("ADD", new DialogInterface.OnClickListener() {
@@ -70,7 +70,7 @@ public class SecondActivity extends AppCompatActivity {
                         for(int i = 0; i < expenseList.size();i++){
                             totalCost += expenseList.get(i).getCost();
                         }
-                        tvTotalCost.setText("Total Cost: " +  Double.toString(totalCost));
+                        setTotalCost(totalCost);
                     }
                 });
                 AlertDialog myDialog = myBuilder.create();
@@ -102,10 +102,14 @@ public class SecondActivity extends AppCompatActivity {
             dbh.deleteAllExpense();
             caExpense.notifyDataSetChanged();
             totalCost = 0.0;
-            tvTotalCost.setText("Total Cost: " +  Double.toString(totalCost));
+            setTotalCost(totalCost);
         }
         return super.onOptionsItemSelected(item);
 
+    }
+
+    public void setTotalCost(double totalCost) {
+        tvTotalCost.setText("Total Cost: $" +  String.format("%.2f", totalCost));
     }
 
     @Override
@@ -119,7 +123,7 @@ public class SecondActivity extends AppCompatActivity {
         for(int i = 0; i < expenseList.size();i++){
             totalCost += expenseList.get(i).getCost();
         }
-        tvTotalCost.setText("Total Cost: " +  Double.toString(totalCost));
+        setTotalCost(totalCost);
     }
 
 }

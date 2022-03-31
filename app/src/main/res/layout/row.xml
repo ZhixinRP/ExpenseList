@@ -21,22 +21,25 @@
                 android:id="@+id/textViewName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
                 android:text="Expense Name"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textSize="26dp" />
 
             <TextView
                 android:id="@+id/textViewCost"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cost" />
+                android:text="Cost"
+                android:textSize="20dp" />
 
         </LinearLayout>
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
             tools:srcCompat="@tools:sample/avatars" />
     </LinearLayout>
 

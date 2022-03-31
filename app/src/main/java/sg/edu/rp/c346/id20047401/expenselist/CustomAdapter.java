@@ -42,8 +42,7 @@ public class CustomAdapter extends ArrayAdapter {
 
         // Set values to the TextView to display the corresponding information
         tvName.setText(currentVersion.getName());
-        tvCost.setText(String.valueOf(currentVersion.getCost()));
-
+        tvCost.setText("$" + String.format("%.2f", currentVersion.getCost()));
         if (currentVersion.getCost() <= 50){
             ivDollar.setImageResource(android.R.color.holo_green_light);
         } else if (currentVersion.getCost() <= 200){
